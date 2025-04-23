@@ -1,5 +1,4 @@
 from rest_framework import serializers
-
 from cinema.models import Movie
 
 
@@ -22,3 +21,7 @@ class MovieSerializer(serializers.Serializer):
         instance.save()
 
         return instance
+
+
+class GenreSerializer(serializers.Serializer):
+    id = serializers.IntegerField(read_only=True)
